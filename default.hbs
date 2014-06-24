@@ -38,7 +38,9 @@
     {{ghost_foot}}
 
     {{! The main JavaScript file for Casper }}
+    <script>var numPages = parseInt('{{pagination.pages}}');</script>
     <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/jquery.infinitescroll.js"}}"></script>
     <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
 
 </body>
