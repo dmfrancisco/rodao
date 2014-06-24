@@ -804,12 +804,12 @@ margin on the iframe, cause it breaks stuff. */
     max-width: 700px;
     margin: 4rem auto;
     font-size: 1.3rem;
-    color: #9EABB3;
+    color: #d0d0d0;
     text-align: center;
 }
 
 .pagination a {
-    color: #9EABB3;
+    color: #7e7e7e;
 }
 
 /* Push the previous/next links out to the left/right */
@@ -818,7 +818,7 @@ margin on the iframe, cause it breaks stuff. */
     position: absolute;
     display: inline-block;
     padding: 0 15px;
-    border: #EBF2F6 2px solid;
+    border: #d0d0d0 1px solid;
     text-decoration: none;
     border-radius: 30px;
     transition: border ease 0.3s;
@@ -834,7 +834,8 @@ margin on the iframe, cause it breaks stuff. */
 
 .older-posts:hover,
 .newer-posts:hover {
-    border-color: #9EABB3;
+    border-color: #15955c;
+    color: #15955c;
 }
 
 
