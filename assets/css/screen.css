@@ -223,17 +223,18 @@ h6 {
 }
 
 a {
-    color: #4a4a4a;
+    color: #57a3e8;
     transition: color ease 0.3s;
+    text-decoration: none;
 }
 
 a:hover {
-    color: #57A3E8;
+    color: #4c69ba;
 }
 
 h1 a, h2 a, h3 a,
 h4 a, h5 a, h6 a {
-    color: #50585D;
+    color: #333332;
 }
 
 
@@ -372,7 +373,7 @@ table td {
     border-top: 1px solid #efefef;
 }
 
-table th { color: #000; }
+table th { color: #333332; }
 
 table caption + thead tr:first-child th,
 table caption + thead tr:first-child td,
@@ -454,11 +455,8 @@ margin on the iframe, cause it breaks stuff. */
     display: table;
     width: 100%;
     height: 60%;
-    margin-bottom: 5rem;
     text-align: center;
-    color: #fff;
-    background: #303538 no-repeat center center;
-    background-size: cover;
+    color: #333332;
 }
 
 .blog-logo {
@@ -476,11 +474,10 @@ margin on the iframe, cause it breaks stuff. */
 
 /* The details of your blog. Defined in ghost/settings/ */
 .blog-title {
-    margin: 10px 0 10px 0;
+    margin: 20px 0 0 0;
     font-size: 5rem;
     letter-spacing: -1px;
-    font-weight: bold;
-    text-shadow: 0 1px 6px rgba(0,0,0,0.1);
+    font-weight: 700;
 }
 
 .blog-description {
@@ -489,7 +486,27 @@ margin on the iframe, cause it breaks stuff. */
     line-height: 1.5em;
     font-weight: 300;
     letter-spacing: 0;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.posts-header, .author h2, .published h2 {
+    max-width: 700px;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+    border-top: 1px solid #d0d0d0;
+    padding-left: 3px;
+    padding-top: 8px;
+    color: #d0d0d0;
+}
+
+.posts-header {
+    width: 80%;
+    max-width: 700px;
+}
+
+.home-template .post-title, .archive-template .post-title {
+    font-size: 1.5em;
 }
 
 /* Every post, on every page, gets this style on its <article> tag */
@@ -499,28 +516,9 @@ margin on the iframe, cause it breaks stuff. */
     max-width: 700px;
     margin: 4rem auto;
     padding-bottom: 4rem;
-    border-bottom: #EBF2F6 1px solid;
+    border-bottom: #eeeeee 1px solid;
     word-break: break-word;
     hyphens: auto;
-}
-
-/* Add a little circle in the middle of the border-bottom on our .post
-   just for the lolz and stylepoints. */
-.post:after {
-    display: block;
-    content: "";
-    width: 7px;
-    height: 7px;
-    border: #E7EEF2 1px solid;
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    margin-left: -5px;
-    background: #fff;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
-    box-shadow: #fff 0 0 0 5px;
 }
 
 .post-title {
@@ -535,11 +533,11 @@ margin on the iframe, cause it breaks stuff. */
     display: inline-block;
     margin: 0 0 5px 0;
     font-size: 1.5rem;
-    color: #9EABB3;
+    color: #d0d0d0;
 }
 
 .post-meta a {
-    color: #9EABB3;
+    color: #57a3e8;
     text-decoration: none;
 }
 
@@ -647,9 +645,8 @@ margin on the iframe, cause it breaks stuff. */
 /* The author credit area after the post */
 .post-footer {
     position: relative;
-    margin: 4rem 0 0 0;
-    padding: 4rem 0 0 0;
-    border-top: #EBF2F6 1px solid;
+    margin: 4rem 0;
+    padding: 4rem 0;
 }
 
 .post-footer h4 {
@@ -663,6 +660,37 @@ margin on the iframe, cause it breaks stuff. */
     line-height: 1.6em;
 }
 
+.author, .published {
+    width: 48%;
+    position: relative;
+}
+
+.author {
+    float: left;
+}
+
+.published {
+    float: right;
+}
+
+.author h2, .published h2 {
+    margin-bottom: 40px;
+}
+
+.author-image {
+    position: absolute;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    -webkit-border-radius: 80px;
+    -moz-border-radius: 80px;
+    border-radius: 80px;
+}
+
+.author-info {
+    padding-left: 100px;
+}
+
 /* list of author links - location / url */
 .author-meta {
     padding: 0;
@@ -670,7 +698,6 @@ margin on the iframe, cause it breaks stuff. */
     list-style: none;
     font-size: 1.4rem;
     line-height: 1;
-    font-style: italic;
     color: #9EABB3;
 }
 
@@ -695,12 +722,28 @@ margin on the iframe, cause it breaks stuff. */
     color: #9EABB3;
 }
 .author-meta a:hover {
-    color: #57A3E8;
+    color: #57a3e8;
 }
 
-/* Create some space to the right for the share links */
-.post-footer .author {
-    margin-right: 180px;
+.published ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.published li {
+    line-height: 1em;
+    display: inline-block;
+}
+.published li a {
+    border: 1px solid #57a3e8;
+    background: #57a3e8;
+    color: #fff;
+    padding: 0.5rem 1rem 0.7rem;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 1.6rem;
 }
 
 /* Drop the share links in the space to the right.
@@ -747,6 +790,7 @@ margin on the iframe, cause it breaks stuff. */
 
 .tag-archive-header {
     max-width: 700px;
+    width: 80%;
     margin: 0 auto;
     border-top: 1px solid #d0d0d0;
     position: relative;
@@ -754,7 +798,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .tag-archive-header h1 {
-    font-size: 12px;
+    font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 2px;
     padding-top: 8px;
@@ -824,8 +868,8 @@ margin on the iframe, cause it breaks stuff. */
 
 .older-posts:hover,
 .newer-posts:hover {
-    border-color: #15955c;
-    color: #15955c;
+    border-color: #57a3e8;
+    color: #57a3e8;
 }
 
 
@@ -907,7 +951,20 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 /* ==========================================================================
-   11. Media Queries - Smaller than 500px
+   11. Media Queries - Smaller than 800px
+   ========================================================================== */
+
+
+@media only screen and (max-width: 800px) {
+    .author, .published {
+        width: auto;
+        float: none;
+        margin-bottom: 40px;
+    }
+}
+
+/* ==========================================================================
+   12. Media Queries - Smaller than 500px
    ========================================================================== */
 
 
@@ -919,6 +976,12 @@ margin on the iframe, cause it breaks stuff. */
 
     .inner,
     .pagination {
+        width: auto;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    .tag-archive-header, .posts-header {
         width: auto;
         margin-left: 16px;
         margin-right: 16px;
@@ -985,13 +1048,11 @@ margin on the iframe, cause it breaks stuff. */
 
     .post-footer {
         padding: 4rem 0;
-        text-align: center;
     }
 
     .post-footer .author {
         margin: 0 0 2rem 0;
         padding: 0 0 1.6rem 0;
-        border-bottom: #EBF2F6 1px dashed;
     }
 
     .post-footer .share {
