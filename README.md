@@ -1,8 +1,8 @@
-# Casper
+## Ródão
 
-The default theme for [Ghost](http://github.com/tryghost/ghost/).
+Ródão is a minimalist theme for [Ghost](https://github.com/TryGhost), the free and open blogging platform. It is heavily based on two great open source themes, [Clonium](https://github.com/cparaiso/clonium) and [Readium](https://github.com/starburst1977/Readium). Ródão was named after a lovely town in Portugal, [Vila Velha de Ródão](https://db.tt/D9wyIx9p).
 
-## Copyright & License
+### Copyright & License
 
 Copyright (c) 2013-2014 Ghost Foundation - Released under the MIT License.
 

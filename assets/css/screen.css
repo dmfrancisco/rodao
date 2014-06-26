@@ -165,10 +165,11 @@ html {
 body {
     height: 100%;
     max-height: 100%;
-    font-family: 'Noto Serif', serif;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 2.0rem;
     line-height: 1.6em;
     color: #3A4145;
+    -webkit-font-smoothing: antialiased;
 }
 
 ::-moz-selection {
@@ -188,7 +189,7 @@ h4, h5, h6 {
     text-rendering: optimizeLegibility;
     line-height: 1;
     margin-top: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 h1 {
@@ -222,17 +223,18 @@ h6 {
 }
 
 a {
-    color: #4a4a4a;
+    color: #57a3e8;
     transition: color ease 0.3s;
+    text-decoration: none;
 }
 
 a:hover {
-    color: #57A3E8;
+    color: #4c69ba;
 }
 
 h1 a, h2 a, h3 a,
 h4 a, h5 a, h6 a {
-    color: #50585D;
+    color: #333332;
 }
 
 
@@ -371,7 +373,7 @@ table td {
     border-top: 1px solid #efefef;
 }
 
-table th { color: #000; }
+table th { color: #333332; }
 
 table caption + thead tr:first-child th,
 table caption + thead tr:first-child td,
@@ -453,11 +455,8 @@ margin on the iframe, cause it breaks stuff. */
     display: table;
     width: 100%;
     height: 60%;
-    margin-bottom: 5rem;
     text-align: center;
-    color: #fff;
-    background: #303538 no-repeat center center;
-    background-size: cover;
+    color: #333332;
 }
 
 .blog-logo {
@@ -475,12 +474,10 @@ margin on the iframe, cause it breaks stuff. */
 
 /* The details of your blog. Defined in ghost/settings/ */
 .blog-title {
-    margin: 10px 0 10px 0;
+    margin: 20px 0 0 0;
     font-size: 5rem;
     letter-spacing: -1px;
-    font-weight: bold;
-    font-family: 'Open Sans', sans-serif;
-    text-shadow: 0 1px 6px rgba(0,0,0,0.1);
+    font-weight: 700;
 }
 
 .blog-description {
@@ -488,9 +485,28 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 1.8rem;
     line-height: 1.5em;
     font-weight: 300;
-    font-family: 'Noto Serif', serif;
     letter-spacing: 0;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.posts-header, .author h2, .published h2 {
+    max-width: 700px;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+    border-top: 2px solid #eaedee;
+    padding-left: 3px;
+    padding-top: 8px;
+    color: #a5b2b9;
+}
+
+.posts-header {
+    width: 80%;
+    max-width: 700px;
+}
+
+.home-template .post-title, .archive-template .post-title {
+    font-size: 1.5em;
 }
 
 /* Every post, on every page, gets this style on its <article> tag */
@@ -500,28 +516,9 @@ margin on the iframe, cause it breaks stuff. */
     max-width: 700px;
     margin: 4rem auto;
     padding-bottom: 4rem;
-    border-bottom: #EBF2F6 1px solid;
+    border-bottom: #eaedee 1px solid;
     word-break: break-word;
     hyphens: auto;
-}
-
-/* Add a little circle in the middle of the border-bottom on our .post
-   just for the lolz and stylepoints. */
-.post:after {
-    display: block;
-    content: "";
-    width: 7px;
-    height: 7px;
-    border: #E7EEF2 1px solid;
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    margin-left: -5px;
-    background: #fff;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
-    box-shadow: #fff 0 0 0 5px;
 }
 
 .post-title {
@@ -532,22 +529,15 @@ margin on the iframe, cause it breaks stuff. */
     text-decoration: none;
 }
 
-.post-excerpt p {
-    margin: 1.6rem 0 0 0;
-    font-size: 0.9em;
-    line-height: 1.6em;
-}
-
 .post-meta {
     display: inline-block;
     margin: 0 0 5px 0;
-    font-family: 'Open Sans', sans-serif;
     font-size: 1.5rem;
-    color: #9EABB3;
+    color: #a5b2b9;
 }
 
 .post-meta a {
-    color: #9EABB3;
+    color: #57a3e8;
     text-decoration: none;
 }
 
@@ -631,6 +621,10 @@ margin on the iframe, cause it breaks stuff. */
     padding: 2.5rem 0;
 }
 
+.post-content {
+    font-family: 'Lora', serif;
+}
+
 /* Keep images centred and within the bounds of the post-width */
 .post-content img {
     display: block;
@@ -651,9 +645,8 @@ margin on the iframe, cause it breaks stuff. */
 /* The author credit area after the post */
 .post-footer {
     position: relative;
-    margin: 4rem 0 0 0;
-    padding: 4rem 0 0 0;
-    border-top: #EBF2F6 1px solid;
+    margin: 4rem 0;
+    padding: 4rem 0;
 }
 
 .post-footer h4 {
@@ -667,6 +660,37 @@ margin on the iframe, cause it breaks stuff. */
     line-height: 1.6em;
 }
 
+.author, .published {
+    width: 48%;
+    position: relative;
+}
+
+.author {
+    float: left;
+}
+
+.published {
+    float: right;
+}
+
+.author h2, .published h2 {
+    margin-bottom: 40px;
+}
+
+.author-image {
+    position: absolute;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    -webkit-border-radius: 80px;
+    -moz-border-radius: 80px;
+    border-radius: 80px;
+}
+
+.author-info {
+    padding-left: 100px;
+}
+
 /* list of author links - location / url */
 .author-meta {
     padding: 0;
@@ -674,8 +698,7 @@ margin on the iframe, cause it breaks stuff. */
     list-style: none;
     font-size: 1.4rem;
     line-height: 1;
-    font-style: italic;
-    color: #9EABB3;
+    color: #a5b2b9;
 }
 
 .author-meta li {
@@ -696,15 +719,31 @@ margin on the iframe, cause it breaks stuff. */
 .author-meta li:first-child:before { display: none; }
 
 .author-meta a {
-    color: #9EABB3;
+    color: #a5b2b9;
 }
 .author-meta a:hover {
-    color: #57A3E8;
+    color: #57a3e8;
 }
 
-/* Create some space to the right for the share links */
-.post-footer .author {
-    margin-right: 180px;
+.published ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.published li {
+    line-height: 1em;
+    display: inline-block;
+}
+.published li a {
+    border: 1px solid #57a3e8;
+    background: #57a3e8;
+    color: #fff;
+    padding: 0.5rem 1rem 0.7rem;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    font-size: 1.6rem;
 }
 
 /* Drop the share links in the space to the right.
@@ -750,29 +789,20 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .tag-archive-header {
-    padding: 20px 0;
-    text-align: center;
     max-width: 700px;
-    margin: 4rem auto;
-    border-bottom: 1px solid #EBF2F6;
+    width: 80%;
+    margin: 0 auto;
+    border-top: 2px solid #eaedee;
     position: relative;
+    color: #a5b2b9;
 }
 
-.tag-archive-header:after {
-    display: block;
-    content: "";
-    width: 7px;
-    height: 7px;
-    border: #E7EEF2 1px solid;
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    margin-left: -5px;
-    background: #fff;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
-    box-shadow: #fff 0 0 0 5px;
+.tag-archive-header h1 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-top: 8px;
+    padding-left: 3px;
 }
 
 .archive-template .blog-title {
@@ -807,14 +837,13 @@ margin on the iframe, cause it breaks stuff. */
     width: 80%;
     max-width: 700px;
     margin: 4rem auto;
-    font-family: 'Open Sans', sans-serif;
     font-size: 1.3rem;
-    color: #9EABB3;
+    color: #a5b2b9;
     text-align: center;
 }
 
 .pagination a {
-    color: #9EABB3;
+    color: #7e7e7e;
 }
 
 /* Push the previous/next links out to the left/right */
@@ -823,7 +852,7 @@ margin on the iframe, cause it breaks stuff. */
     position: absolute;
     display: inline-block;
     padding: 0 15px;
-    border: #EBF2F6 2px solid;
+    border: #eaedee 2px solid;
     text-decoration: none;
     border-radius: 30px;
     transition: border ease 0.3s;
@@ -833,135 +862,30 @@ margin on the iframe, cause it breaks stuff. */
     right: 0;
 }
 
-.page-number {
-    display: inline-block;
-    padding: 2px 0;
-}
-
 .newer-posts {
     left: 0;
 }
 
 .older-posts:hover,
 .newer-posts:hover {
-    border-color: #9EABB3;
+    border-color: #57a3e8;
+    color: #57a3e8;
 }
 
 
 /* ==========================================================================
-   9. Footer - The bottom of every page
+   Others (overrides)
    ========================================================================== */
 
-.site-footer {
-    position: relative;
-    margin: 8rem 0 0 0;
-    padding: 4rem 0;
-    border-top: #EBF2F6 1px solid;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.3rem;
-    line-height: 1.7em;
-    color: #BBC7CC;
-    text-align: center;
-    background: #F7FAFB;
+.content {
+    padding-bottom: 8rem;
 }
 
-.site-footer a {
-    color: #BBC7CC;
-    text-decoration: underline;
-}
-
-.site-footer a:hover {
-    color: #50585D;
-}
-
-.poweredby .icon-ghost {
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.poweredby .icon-ghost:hover {
-    text-decoration: none;
-}
-
-.poweredby .icon-ghost:before {
-    font-size: 1rem;
-    margin-right: 0.2em;
-}
-
-/* The subscribe icon on the footer */
-.subscribe {
-    width: 28px;
-    height: 28px;
-    position: absolute;
-    top: -14px;
-    left: 50%;
-    margin-left: -15px;
-    border: #EBF2F6 1px solid;
-    text-align: center;
-    line-height: 2.4rem;
-    border-radius: 50px;
-    background: #fff;
-    transition: box-shadow 0.5s;
-}
-
-/* The RSS icon, inserted via icon font */
-.subscribe:before {
-    color: #D2DEE3;
-    font-size: 10px;
-    position: absolute;
-    top: 9px;
-    left: 9px;
-    font-weight: bold;
-    transition: color 0.5s ease;
-}
-
-/* Add a box shadow to on hover */
-.subscribe:hover {
-    box-shadow: rgba(0,0,0,0.05) 0 0 0 3px;
-    transition: box-shadow 0.25s;
-}
-
-.subscribe:hover:before {
-    color: #50585D;
-}
-
-/* CSS tooltip saying "Subscribe!" - initially hidden */
-.tooltip {
-    opacity:0;
-    display: inline-block;
-    padding: 4px 8px 5px 8px;
-    position:absolute;
-    top: -23px;
-    left: -21px;
-    color: rgba(255,255,255,0.9);
-    font-size: 1.1rem;
-    line-height: 1em;
-    text-align: center;
-    background: #50585D;
-    border-radius:20px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    transition: opacity 0.3s ease, top 0.3s ease;
-}
-
-/* The little chiclet arrow under the tooltip, pointing down */
-.tooltip:after {
-    content:"";
-    border-width:5px 5px 0 5px;
-    border-style:solid;
-    border-color: #50585D transparent;
-    display:block;
-    position:absolute;
-    bottom:-4px;
-    left:50%;
-    margin-left:-5px;
-    z-index: 220;
-    width:0;
-}
-
-/* On hover, show the tooltip! */
-.subscribe:hover .tooltip {
-    opacity: 1;
-    top: -33px;
+/* Spinner for Infinite Scrolling */
+#infscr-loading {
+    position: fixed;
+    bottom: 15px;
+    right: 25px;
 }
 
 
@@ -1027,7 +951,20 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 /* ==========================================================================
-   11. Media Queries - Smaller than 500px
+   11. Media Queries - Smaller than 800px
+   ========================================================================== */
+
+
+@media only screen and (max-width: 800px) {
+    .author, .published {
+        width: auto;
+        float: none;
+        margin-bottom: 40px;
+    }
+}
+
+/* ==========================================================================
+   12. Media Queries - Smaller than 500px
    ========================================================================== */
 
 
@@ -1039,6 +976,12 @@ margin on the iframe, cause it breaks stuff. */
 
     .inner,
     .pagination {
+        width: auto;
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    .tag-archive-header, .posts-header {
         width: auto;
         margin-left: 16px;
         margin-right: 16px;
@@ -1105,13 +1048,11 @@ margin on the iframe, cause it breaks stuff. */
 
     .post-footer {
         padding: 4rem 0;
-        text-align: center;
     }
 
     .post-footer .author {
         margin: 0 0 2rem 0;
         padding: 0 0 1.6rem 0;
-        border-bottom: #EBF2F6 1px dashed;
     }
 
     .post-footer .share {
@@ -1131,11 +1072,6 @@ margin on the iframe, cause it breaks stuff. */
 
     .page-number {
         display: block;
-    }
-
-    .site-footer {
-        margin-top: 6rem;
-        font-size: 1.1rem;
     }
 
 }
