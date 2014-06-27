@@ -466,10 +466,15 @@ margin on the iframe, cause it breaks stuff. */
 /* Yo-logo. Yolo-go. Upload one in ghost/settings/ */
 .blog-logo img {
     display: block;
-    max-height: 100px;
+    max-height: 110px;
+    max-width:  100%;
     width: auto;
     margin: 0 auto;
     line-height: 0;
+}
+
+.home-template .blog-logo img {
+    max-height: 140px;
 }
 
 /* The details of your blog. Defined in ghost/settings/ */
@@ -478,6 +483,7 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 5rem;
     letter-spacing: -1px;
     font-weight: 700;
+    color: #3A4145;
 }
 
 .blog-description {
@@ -503,10 +509,6 @@ margin on the iframe, cause it breaks stuff. */
 .posts-header {
     width: 80%;
     max-width: 700px;
-}
-
-.home-template .post-title, .archive-template .post-title {
-    font-size: 1.5em;
 }
 
 /* Every post, on every page, gets this style on its <article> tag */
@@ -876,6 +878,51 @@ margin on the iframe, cause it breaks stuff. */
 /* ==========================================================================
    Others (overrides)
    ========================================================================== */
+
+.home-template {
+    background-color: #222;
+}
+
+html.backgroundsize .home-template {
+    background: #222 url("../images/bgd.jpg") no-repeat center center fixed;
+}
+
+html.backgroundsize .bgd-blurred {
+    background: #222 url("../images/bgd-blurred.png") no-repeat center center fixed;
+}
+
+html.backgroundsize .home-template,
+html.backgroundsize .bgd-blurred {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+html.backgroundsize .bgd-blurred {
+    opacity: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;
+}
+
+.home-template .posts-header,
+.home-template .post,
+.home-template .post-meta {
+    border-color: rgb(213,227,223); /* Fallback */
+    border-color: rgba(213,227,223,0.3);
+    color: rgb(213,227,223); /* Fallback */
+    color: rgba(213,227,223,0.7);
+}
+
+.home-template a,
+.home-template .site-head,
+.home-template .blog-title {
+    color: #e8f1ee;
+}
 
 .content {
     padding-bottom: 8rem;

@@ -2,6 +2,23 @@
 
 Ródão is a minimalist theme for [Ghost](https://github.com/TryGhost), the free and open blogging platform. It is heavily based on two great open source themes, [Clonium](https://github.com/cparaiso/clonium) and [Readium](https://github.com/starburst1977/Readium). Ródão was named after a lovely town in Portugal, [Vila Velha de Ródão](https://db.tt/D9wyIx9p).
 
+### Getting started
+
+Installing Ródão on your blog is straight forward:
+
+1. Clone this repository and place it in `content/themes` alongside Casper, the default theme
+2. Add two background images to the `assets/images` directory called `bgd.jpg` and `bgd-blurred.png` to display in the index page (the second one is used to create a simple blurry scrolling like Medium does).
+
+To switch to the newly added theme:
+
+1. Restart Ghost. At the moment, Ghost won't notice that you've added a new folder so you'll need to restart it
+2. Login to your Ghost admin, and navigate to `/ghost/settings/general/`
+3. Select your Theme name in the 'Theme' options dropdown
+4. Click 'Save'
+5. Visit the frontend of your blog and marvel at the new theme!
+
+---
+
 ### Copyright & License
 
 Copyright (c) 2013-2014 Ghost Foundation - Released under the MIT License.
