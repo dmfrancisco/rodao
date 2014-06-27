@@ -483,6 +483,7 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 5rem;
     letter-spacing: -1px;
     font-weight: 700;
+    color: #3A4145;
 }
 
 .blog-description {
@@ -877,6 +878,51 @@ margin on the iframe, cause it breaks stuff. */
 /* ==========================================================================
    Others (overrides)
    ========================================================================== */
+
+.home-template {
+    background-color: #222;
+}
+
+html.backgroundsize .home-template {
+    background: #222 url("../images/bgd.jpg") no-repeat center center fixed;
+}
+
+html.backgroundsize .bgd-blurred {
+    background: #222 url("../images/bgd-blurred.png") no-repeat center center fixed;
+}
+
+html.backgroundsize .home-template,
+html.backgroundsize .bgd-blurred {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+html.backgroundsize .bgd-blurred {
+    opacity: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;
+}
+
+.home-template .posts-header,
+.home-template .post,
+.home-template .post-meta {
+    border-color: rgb(213,227,223); /* Fallback */
+    border-color: rgba(213,227,223,0.3);
+    color: rgb(213,227,223); /* Fallback */
+    color: rgba(213,227,223,0.7);
+}
+
+.home-template a,
+.home-template .site-head,
+.home-template .blog-title {
+    color: #e8f1ee;
+}
 
 .content {
     padding-bottom: 8rem;
