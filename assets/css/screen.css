@@ -466,10 +466,15 @@ margin on the iframe, cause it breaks stuff. */
 /* Yo-logo. Yolo-go. Upload one in ghost/settings/ */
 .blog-logo img {
     display: block;
-    max-height: 100px;
+    max-height: 110px;
+    max-width:  100%;
     width: auto;
     margin: 0 auto;
     line-height: 0;
+}
+
+.home-template .blog-logo img {
+    max-height: 140px;
 }
 
 /* The details of your blog. Defined in ghost/settings/ */
@@ -503,10 +508,6 @@ margin on the iframe, cause it breaks stuff. */
 .posts-header {
     width: 80%;
     max-width: 700px;
-}
-
-.home-template .post-title, .archive-template .post-title {
-    font-size: 1.5em;
 }
 
 /* Every post, on every page, gets this style on its <article> tag */
