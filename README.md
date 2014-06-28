@@ -16,7 +16,7 @@ Ródão is a minimalist theme for [Ghost](https://github.com/TryGhost), the free
 Installing Ródão on your blog is straight forward:
 
 1. Clone this repository and place it in `content/themes` alongside Casper, the default theme
-2. Add two background images to the `assets/images` directory called `bgd.jpg` and `bgd-blurred.png` to display in the index page (the second one is used to create a simple blurry scrolling like Medium does).
+2. Add two background images to the `assets/images` directory called `bgd.jpg` and `bgd-blurred.jpg` to display in the index page (the second one is used to create a simple blurry scrolling like Medium does).
 
 Now open the `partials/config.hbs` file and set the following settings (optional):
 
