@@ -473,7 +473,8 @@ margin on the iframe, cause it breaks stuff. */
     line-height: 0;
 }
 
-.home-template .blog-logo img {
+.home-template .blog-logo img,
+.archive-template .blog-logo img {
     max-height: 140px;
 }
 
@@ -753,10 +754,8 @@ margin on the iframe, cause it breaks stuff. */
    to be flexible at smaller screen sizes while the share
    links remain at a fixed width the whole time */
 .post-footer .share {
-    position: absolute;
-    top: 4rem;
-    right: 0;
-    width: 140px;
+    text-align: right;
+    width: 100%;
 }
 
 .post-footer .share a {
@@ -768,7 +767,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .post-footer .share a:hover {
-    color: #50585D;
+    color: #3f4549;
 }
 
 
@@ -879,12 +878,14 @@ margin on the iframe, cause it breaks stuff. */
    Others (overrides)
    ========================================================================== */
 
-.home-template {
-    background-color: #222;
+.home-template,
+.archive-template {
+    background-color: #4c4f5c;
 }
 
-html.backgroundsize .home-template {
-    background: #222 url("../images/bgd.jpg") no-repeat center center fixed;
+html.backgroundsize .home-template,
+html.backgroundsize .archive-template {
+    background: #4c4f5c url("../images/bgd.jpg") no-repeat center center fixed;
 }
 
 html.backgroundsize .bgd-blurred {
@@ -892,6 +893,7 @@ html.backgroundsize .bgd-blurred {
 }
 
 html.backgroundsize .home-template,
+html.backgroundsize .archive-template,
 html.backgroundsize .bgd-blurred {
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -911,7 +913,10 @@ html.backgroundsize .bgd-blurred {
 
 .home-template .posts-header,
 .home-template .post,
-.home-template .post-meta {
+.home-template .post-meta,
+.archive-template .posts-header,
+.archive-template .post,
+.archive-template .post-meta {
     border-color: rgb(213,227,223); /* Fallback */
     border-color: rgba(213,227,223,0.3);
     color: rgb(213,227,223); /* Fallback */
@@ -920,7 +925,10 @@ html.backgroundsize .bgd-blurred {
 
 .home-template a,
 .home-template .site-head,
-.home-template .blog-title {
+.home-template .blog-title,
+.archive-template a,
+.archive-template .site-head,
+.archive-template .blog-title {
     color: #e8f1ee;
 }
 
@@ -1105,10 +1113,6 @@ html.backgroundsize .bgd-blurred {
     .post-footer .share {
         position: static;
         width: auto;
-    }
-
-    .post-footer .share a {
-        margin: 1.4rem 0.8rem 0 0.8rem;
     }
 
     .older-posts,
