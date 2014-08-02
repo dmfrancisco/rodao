@@ -889,7 +889,7 @@ html.backgroundsize .archive-template {
 }
 
 html.backgroundsize .bgd-blurred {
-    background: #222 url("../images/bgd-blurred.png") no-repeat center center fixed;
+    background: #222 url("../images/bgd-blurred.jpg") no-repeat center center fixed;
 }
 
 html.backgroundsize .home-template,
